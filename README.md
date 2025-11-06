@@ -52,7 +52,7 @@ https://colab.research.google.com/drive/1UuaKV3uMsmgFQVUwjKzzMdos_z6g7PwS
 **概念**：先用 HOG 偵測第一幀的人 → 取得初始邊界框 → 用 CSRT 追蹤整段影片  
 **成果檔案**  
 - 影片：[`videos/auto_csrt_tracked.mp4`](videos/auto_csrt_tracked.mp4)  
-- 截圖：![](assets/step5_result.png)
+- 截圖：![`assets/step5_result.jpg`](assets/step5_result.jpg)
 
 ---
 
@@ -88,9 +88,9 @@ https://colab.research.google.com/drive/1xLaj-yQcLALdZA7mFPYs2ryNsWB-gkPR
 
 | 描述 | 檔名（建議放在 `assets/` 資料夾） |
 |---|---|
-| Drive 掛載成功 | `step2_mount.png` |
-| 切換資料夾成功 | `step3_cd.png` |
-| 套件安裝畫面 | `step4_pip.png` |
-| 追蹤或骨架標示成功畫面 | `step5_result.png` |
+| Drive 掛載成功 | `step2_mount.jpg` |
+| 切換資料夾成功 | `step3_cd.jpg` |
+| 套件安裝畫面 | `step4_pip.jpg` |
+| 追蹤或骨架標示成功畫面 | `step5_result.jpg` |
 
 ---
