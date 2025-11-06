@@ -101,5 +101,5 @@ https://colab.research.google.com/drive/1xLaj-yQcLALdZA7mFPYs2ryNsWB-gkPR
 |---|---|
 | test-1.mp4 | auto_csrt_tracked.mp4 |
 
-🎬 成果影片下載/觀看：  
-https://github.com/11125013-Ting/Artificial-intelligence/blob/main/videos/auto_csrt_tracked.mp4
+🎬 **成果影片播放連結**  
+https://raw.githubusercontent.com/11125013-Ting/Artificial-intelligence/main/videos/auto_csrt_tracked.mp4
