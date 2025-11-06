@@ -25,7 +25,7 @@ https://blog.csdn.net/qq_30347421/article/details/104534297
 
 ---
 
-## 三、實際操作流程（依教學與組員操作紀錄整理）
+## 三、操作流程
 
 ### Step 1. 開啟 Colab
 開啟我們小組使用的 Notebook：  
