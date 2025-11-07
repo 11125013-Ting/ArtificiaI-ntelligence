@@ -97,12 +97,12 @@ https://colab.research.google.com/drive/1H91ZppZwKA_QGpaH-PmXRAr2GZKtwkSJ
 ```
 
 **輸出檔案**
-![pose_tracked.mp4](videos/pose_tracked.mp4)
+![test-1_pose_tracked.mp4](videos/test-1_pose_tracked.mp4)
 
 
 **執行成果**
 - **輸出影片：** 
-  ![pose_tracked.mp4](videos/pose_tracked.mp4)
+  ![test-1_pose_tracked.mp4](videos/test-1_pose_tracked.mp4)
 - **骨架標示：**  
   ![]()
 
