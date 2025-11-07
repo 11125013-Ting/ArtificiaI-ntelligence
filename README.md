@@ -55,10 +55,10 @@ drive.mount('/content/drive')
 https://colab.research.google.com/drive/1myJMZpZqiKZTzWcI_MTvekDEtF_hy_na
 
 **概念說明：**
-- 使用 HOG 在影片「第一幀」偵測人物位置
+- 第一幀用 HOG 自動偵測人物
 - 擷取偵測框作為初始追蹤框
-- 使用 CSRT 追蹤器逐幀追蹤
-- 輸出完成追蹤的影片
+- 全程使用 CSRT 追蹤
+- 輸出追蹤結果影片
 
 **安裝環境**
 ```bash
@@ -66,12 +66,12 @@ https://colab.research.google.com/drive/1myJMZpZqiKZTzWcI_MTvekDEtF_hy_na
 ```
 
 **輸出檔案**
-![auto_csrt_tracked.mp4](videos/auto_csrt_tracked.mp4)
+`videos/auto_csrt_tracked.mp4`
 
 
 **執行成果**
 - **輸出影片：** 
-  ![auto_csrt_tracked.mp4](videos/auto_csrt_tracked.mp4)
+  `videos/auto_csrt_tracked.mp4`
 - **成果截圖：**  
   ![step5_result.jpg](assets/step5_result.jpg)
 
@@ -88,8 +88,8 @@ https://colab.research.google.com/drive/1H91ZppZwKA_QGpaH-PmXRAr2GZKtwkSJ
 
 **概念說明**
 - 使用 MediaPipe Pose 偵測 33 個人體關鍵點
-- 以線段連接形成骨架，觀測動作姿勢
-- 適合 舞蹈、運動、動作分析
+- 以線段連接呈現骨架動作
+- 適合：舞蹈、運動、姿勢分析
 
 **安裝環境**
 ```bash
@@ -97,20 +97,20 @@ https://colab.research.google.com/drive/1H91ZppZwKA_QGpaH-PmXRAr2GZKtwkSJ
 ```
 
 **輸出檔案**
-![test-1_pose_tracked.mp4](videos/test-1_pose_tracked.mp4)
+`videos/test-1_pose_tracked.mp4`
 
 
 **執行成果**
 - **輸出影片：** 
-  ![test-1_pose_tracked.mp4](videos/test-1_pose_tracked.mp4)
+  `videos/test-1_pose_tracked.mp4`
 - **骨架標示：**  
   ![]()
 
 **常見狀況與處理方式**
-| 問題 | 原因 | 解決方式 |
-|---|---|---|
-| 骨架點會忽隱忽現、線段抖動 | 偵測信心值偏低 | 將 `min_detection_confidence` 與 `min_tracking_confidence` 調至 `0.6~0.7` |
-| 播放卡頓 / FPS 不穩定 | 寫檔時 FPS 未設定 | 以 `cv2.VideoWriter` 固定 FPS 或沿用原影片 FPS |
+| 問題     | 原因      | 解決方式                                    |
+| ------ | ------- | --------------------------------------- |
+| 骨架點抖動  | 偵測信心值不足 | 將 `min_detection_confidence` 調至 0.6–0.7 |
+| 影片播放不順 | FPS 未固定 | 以 `VideoWriter` 固定 FPS                  |
 
 ---
 
@@ -120,10 +120,9 @@ https://colab.research.google.com/drive/1Q5uEcF9hB27QALWkMBR2JAYDF9GiEdd3
 
 
 **概念說明**
-- 使用 YOLOv8 偵測畫面中所有人物
-- 對每位人物建立獨立追蹤器
-- 每隔數幀重新偵測，避免追蹤偏移
-- 可同時追蹤多人
+- YOLO 負責辨識畫面中所有「人」
+- 每個人建立獨立 CSRT 追蹤器
+- 可處理多人同時移動的影片
 
 **安裝環境**
 ```bash
@@ -131,19 +130,19 @@ https://colab.research.google.com/drive/1Q5uEcF9hB27QALWkMBR2JAYDF9GiEdd3
 ```
 
 **輸出檔案**
-![test-2_tracked.mp4](videos/test-2_tracked.mp4)
+`videos/test-2_tracked.mp4`
 
 **執行成果**
 - **輸出影片：**
-  ![test-2_tracked.mp4](videos/test-2_tracked.mp4)
+`videos/test-2_tracked.mp4`
 - **追蹤截圖：**  
   ![]()
 
 **常見狀況與處理方式**
-| 問題 | 原因 | 解決方式 |
-|---|---|---|
-| 追蹤速度慢 / 延遲 | YOLO 模型較大 & 偵測過頻 | 改用 `yolov8n.pt` 或將 `DETECT_INTERVAL` 增至 `10~15` |
-| 偵測不到人或框跳動 | 影片清晰度不足或 threshold 太低 | 提高 YOLO confidence threshold，並確保影片清晰度 |
+| 問題       | 原因            | 解決方式                                  |
+| -------- | ------------- | ------------------------------------- |
+| 追蹤速度慢、會卡 | YOLO 模型太大     | 使用 `yolov8n.pt` 或提升 `DETECT_INTERVAL` |
+| 框跳動或抓不到人 | 信心值太低 / 畫面不清楚 | 提高 confidence threshold               |
 
 ---
 
