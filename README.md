@@ -123,8 +123,8 @@ drive.mount('/content/drive')
 ```
 **或直接上傳影片：**
 ```python
-from google.colab import drive
-drive.mount('/content/drive')
+from google.colab import files
+files.upload()
 ```
 
 ---
